@@ -84,4 +84,7 @@
     "workbench.settings.useSplitJSON": true,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.panel.defaultLocation": "right",
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.colorTheme": "Dracula",
+    "ruby.codeCompletion": "rcodetools",
 }

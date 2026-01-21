@@ -69,4 +69,5 @@ export BUNDLER_EDITOR=code
 export EDITOR=code
 
 # Set ipdb as the default Python debugger
-export PYTHONBREAKPOINT=ipdb.set_trace
+export PYTHONBREAKPOINT=ipdb.set_traceexport GOOGLE_APPLICATION_CREDENTIALS=/Users/havish/code/Havish96/gcp/lewagon-403914-b536fb2439b3.json
+export OPENSSL_CONF="$HOME/.openssl/openssl.cnf"

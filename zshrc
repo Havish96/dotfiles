@@ -17,13 +17,20 @@ source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 unalias lt # we need `lt` for https://github.com/localtunnel/localtunnel
 
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Load rbenv if installed (to manage your Ruby versions)
 export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
 # Load pyenv (to manage your Python versions)
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init - 2> /dev/null)" && RPROMPT+='[🐍 $(pyenv version-name)]'
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+  RPROMPT+='[🐍 $(pyenv version-name)]'
+fi
 
 # Load nvm (to manage your node versions)
 export NVM_DIR="$HOME/.nvm"
@@ -69,5 +76,10 @@ export BUNDLER_EDITOR=code
 export EDITOR=code
 
 # Set ipdb as the default Python debugger
-export PYTHONBREAKPOINT=ipdb.set_traceexport GOOGLE_APPLICATION_CREDENTIALS=/Users/havish/code/Havish96/gcp/lewagon-403914-b536fb2439b3.json
+export PYTHONBREAKPOINT=ipdb.set_trace
+
+# Set the Google Application Credentials for the Google Cloud SDK
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/havish/code/Havish96/gcp/lewagon-403914-b536fb2439b3.json
+
+# Set the OpenSSL configuration file
 export OPENSSL_CONF="$HOME/.openssl/openssl.cnf"

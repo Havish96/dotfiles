@@ -62,3 +62,5 @@
 [user]
 	email = soowamhc@gmail.com
 	name = Havish Soowamber
+[credential "https://git.heroku.com"]
+	helper = !heroku git:credentials

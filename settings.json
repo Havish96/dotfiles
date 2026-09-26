@@ -58,7 +58,6 @@
     "notebook.diff.ignoreMetadata": true,
     "notebook.lineNumbers": "on",
     "notebook.markup.fontSize": 13,
-    "python.defaultInterpreterPath": "/Users/havish/.pyenv/versions/3.10.6/envs/lewagon",
     "python.formatting.provider": "yapf",
     "python.languageServer": "Pylance",
     "python.linting.enabled": false,
@@ -86,7 +85,6 @@
     "editor.unicodeHighlight.invisibleCharacters": false,
     "extensions.ignoreRecommendations": true,
     "editor.inlineSuggest.enabled": true,
-    "workbench.colorTheme": "One Dark Pro Darker",
 
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[javascript]": {
@@ -94,11 +92,12 @@
     },
     "[ruby]": {
       "editor.tabSize": 2,
-      "editor.useTabStops": false,
-      "editor.defaultFormatter": "ruby-syntax-tree.vscode-syntax-tree"
+    "editor.useTabStops": false
     },
     "[erb]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
-    "prettier.tabWidth": 4
+    "prettier.tabWidth": 4,
+    "workbench.colorTheme": "Spinel",
+    "claudeCode.preferredLocation": "panel"
 }

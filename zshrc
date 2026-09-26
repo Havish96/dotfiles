@@ -24,13 +24,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
-# Load pyenv (to manage your Python versions)
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-if command -v pyenv >/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-  RPROMPT+='[🐍 $(pyenv version-name)]'
-fi
+# Python: uv manages Python versions, venvs and tools (https://docs.astral.sh/uv/)
+# Its Pythons and `uv tool` executables live in ~/.local/bin
+export PATH="${HOME}/.local/bin:${PATH}"
+command -v uv >/dev/null 2>&1 && eval "$(uv generate-shell-completion zsh)"
 
 # Load nvm (to manage your node versions)
 export NVM_DIR="$HOME/.nvm"
@@ -74,9 +71,6 @@ export LC_ALL=en_US.UTF-8
 
 export BUNDLER_EDITOR=code
 export EDITOR=code
-
-# Set ipdb as the default Python debugger
-export PYTHONBREAKPOINT=ipdb.set_trace
 
 # Set the Google Application Credentials for the Google Cloud SDK
 export GOOGLE_APPLICATION_CREDENTIALS=/Users/havish/code/Havish96/gcp/lewagon-403914-b536fb2439b3.json
